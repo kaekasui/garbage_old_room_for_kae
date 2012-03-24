@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class TopController < ApplicationController
   def index
     respond_to {|format| format.html}
   end
