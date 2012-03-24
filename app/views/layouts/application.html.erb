@@ -3,6 +3,7 @@
 <head>
   <title>Room</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "bootstrap/bootstrap-responsive" %>
   <%= stylesheet_link_tag    "bootstrap/bootstrap" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -17,10 +18,11 @@
     <br />
 
     <div class="row">
-      <div class="span8" id="main">
+      <div class="span7" id="main">
         <%= yield %>
       </div>
-      <div class="span4" id="menu">
+      <div class="span5" id="menu">
+        <%= render "shared/menu" %>
       </div>
     </div>
 

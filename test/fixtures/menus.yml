@@ -12,8 +12,7 @@ menu1:
 menu2:
   id: 2
   title: BLOG
-  introduction: ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の
-進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。  
+  introduction: ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。  
   path: blogs_path
   admin: false
   disable: true
