@@ -1,4 +1,6 @@
 Room::Application.routes.draw do
+  namespace :admin do resources :menus end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

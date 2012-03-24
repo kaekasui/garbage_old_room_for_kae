@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_menu.title %>
+</p>
+
+<p>
+  <b>Introduction:</b>
+  <%= @admin_menu.introduction %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%= @admin_menu.path %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @admin_menu.admin %>
+</p>
+
+<p>
+  <b>Disable:</b>
+  <%= @admin_menu.disable %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @admin_menu.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_menu_path(@admin_menu) %> |
+<%= link_to 'Back', admin_menus_path %>
