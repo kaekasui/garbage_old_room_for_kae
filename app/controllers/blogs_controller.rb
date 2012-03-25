@@ -2,7 +2,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+#    @blogs = Blog.all
+    @blogs = Blog.no_draft.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
