@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  menu_id: 1
+  title: MyString
+  position: 1
+  disable: false
+
+two:
+  menu_id: 1
+  title: MyString
+  position: 1
+  disable: false

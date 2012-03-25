@@ -1,5 +1,7 @@
 Room::Application.routes.draw do
 
+  namespace :admin do resources :side_menus end
+
   namespace :admin do resources :blogs end
 
   resources :blogs

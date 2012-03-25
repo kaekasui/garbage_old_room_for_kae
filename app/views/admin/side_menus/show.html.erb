@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Menu:</b>
+  <%= @admin_side_menu.menu_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_side_menu.title %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @admin_side_menu.position %>
+</p>
+
+<p>
+  <b>Disable:</b>
+  <%= @admin_side_menu.disable %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_side_menu_path(@admin_side_menu) %> |
+<%= link_to 'Back', admin_side_menus_path %>
