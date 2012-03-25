@@ -1,6 +1,6 @@
-class CreateAdminSideMenus < ActiveRecord::Migration
+class CreateSideMenus < ActiveRecord::Migration
   def change
-    create_table :admin_side_menus do |t|
+    create_table :side_menus do |t|
       t.integer :menu_id
       t.string :title
       t.integer :position

@@ -1,10 +1,11 @@
 class BlogsController < ApplicationController
+  before_filter :menu_name
+
   # GET /blogs
   # GET /blogs.json
   def index
 #    @blogs = Blog.all
     @blogs = Blog.no_draft.page(params[:page]).per(10)
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @blogs }
@@ -80,5 +81,11 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def menu_name
+    @menu_name = Menu.menu_name(2)
   end
 end
