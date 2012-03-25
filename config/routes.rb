@@ -1,5 +1,7 @@
 Room::Application.routes.draw do
 
+  resources :updated_informations
+
   namespace :admin do
     #resources :blogs
     #resources :updated_informations
