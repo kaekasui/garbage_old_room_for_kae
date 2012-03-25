@@ -1,6 +1,6 @@
-class CreateAdminVersions < ActiveRecord::Migration
+class CreateVersions < ActiveRecord::Migration
   def change
-    create_table :admin_versions do |t|
+    create_table :versions do |t|
       t.string :name
       t.boolean :used
       t.boolean :current

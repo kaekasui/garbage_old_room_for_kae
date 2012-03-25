@@ -1,0 +1,12 @@
+version1:
+  id: 1
+  name: "2.0.0"
+  used: true
+  current: true
+
+version2:
+  id: 2
+  name: "2.0.1"
+  used: true
+  current: false
+
