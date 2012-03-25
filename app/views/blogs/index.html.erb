@@ -11,8 +11,8 @@
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.title %></td>
-    <td><%= blog.contents1 %></td>
-    <td><%= blog.contents2 %></td>
+    <td><%= to_br(blog.contents1).html_safe %></td>
+    <td><%= to_br(blog.contents2).html_safe %></td>
     <td><%= link_to 'Show', blog %></td>
   </tr>
 <% end %>

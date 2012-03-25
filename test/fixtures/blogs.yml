@@ -1,17 +1,34 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
-one:
-  title: MyString
-  blog_category_code: 1
-  contents1: MyText
-  contents2: MyText
+blog1:
+  id: 1
+  title: ﾊｼﾞﾒﾏｼﾃ((ヽ(･ω･｀,,)ﾖﾛｼｸﾃﾞｽ(,,´-ω-)o))ﾍﾟｺﾘ
+  contents1: |
+    ヵェです(*ﾉ▽ﾉ)
+    はじめまして！|∀｀*)ﾉ.+ﾟ☆ﾖﾛｼｸﾃﾞｽ☆.+ﾟ
+  contents2: |
+    ブログとか初めてo(*´－ω－)o･･･ﾄﾞｷﾄﾞｷ♪
+    てか、はじめましてなのかな ( ･ω･)･･･?
+    
+    続けていけるよう頑張りマス∑d(｀Д´ *)
+    ・・・ちゃんと続くカナ？∑d(｀Д´ *)
+    
+    ・・・・・
+    
+    
+    
+    すでにネタつきそぉぉ(｡´Д⊂)
+    
+    ぇーっと
+    今学校で日記かいてます|ーﾟ*)
+    ブログの登録とかも学校のパソコンでやっちゃったりしました|ーﾟ*)ﾌﾌ
+    ∑(゜◇゜*;)ｴｪ!!
+    学校で何してるんだとかいわなぃで(；ωﾉ|柱|。。。
+    個人のパソコンだぁょ(*･ω･*)ﾎﾟｯ
+    あたらしぃのだぁょ(*･ω･*)ﾎﾟﾎﾟｯ
+    ☆-(ノﾟ▽ﾟ)八(ﾟ▽ﾟ *)ノｲｴｰｲv まずはメイポをインスｔ ﾌﾞﾌｯ∵(´ε(○
+    勉強します(pдq｀｡)ちょっと露店まわってから(pд･｀q)
+    
+    また明日Ｓёё━*･ﾟ(つД｀｡)ﾟ･*━Чｏц☆1
   draft: false
-  deleted_at: 2012-03-25 09:24:27
+  created_at: 2006-08-24 08:54:23
+  updated_at: 2006-08-24 17:54:23
 
-two:
-  title: MyString
-  blog_category_code: 1
-  contents1: MyText
-  contents2: MyText
-  draft: false
-  deleted_at: 2012-03-25 09:24:27
