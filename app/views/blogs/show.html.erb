@@ -1,17 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
+<table class="table">
+<%= render :partial => "contents1", :locals => {:blog => @blog} %>
+  <tr>
+    <td colspan="2"><%= to_br(sanitize_blog(@blog.id, false)).html_safe %></td>   </tr>
+  <tr>
+    <td><%#= link_to image_tag(get_comment_icon_image) + "comments(#{@blog.comment_counts})", blog_path(@blog.id) + '.html#comment' %></td>  </tr>
+</table>
 
-<p>
-  <b>Contents1:</b>
-  <%= @blog.contents1 %>
-</p>
+<%#= form_for :blog_comment, :url => confirm_blog_blog_comments_path(:blog_id => @blog.id) do |f| %>  <%#= render :partial => "blog_comments/form", :locals => {:f => f} %>
+<%# end %> 
+<br /> 
 
-<p>
-  <b>Contents2:</b>
-  <%= @blog.contents2 %>
-</p>
-
+<table>
+  <tr><td>
+    <%#= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
+  </td></tr>
+</table>
