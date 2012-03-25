@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120325134631) do
+ActiveRecord::Schema.define(:version => 20120325163556) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(:version => 20120325134631) do
     t.string   "title"
     t.integer  "position"
     t.boolean  "disable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "updated_informations", :force => true do |t|
+    t.date     "display_at"
+    t.integer  "version_id"
+    t.string   "title"
+    t.text     "news"
+    t.text     "comment"
+    t.boolean  "draft"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

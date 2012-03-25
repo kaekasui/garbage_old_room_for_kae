@@ -2,6 +2,7 @@ class TopController < ApplicationController
   before_filter :menu_name
 
   def index
+    @updated_informations = UpdatedInformation.no_draft.limit3
     respond_to {|format| format.html}
   end
 

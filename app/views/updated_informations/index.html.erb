@@ -7,10 +7,6 @@
     <th>Title</th>
     <th>News</th>
     <th>Comment</th>
-    <th>Draft</th>
-    <th>Deleted at</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -21,15 +17,8 @@
     <td><%= updated_information.title %></td>
     <td><%= updated_information.news %></td>
     <td><%= updated_information.comment %></td>
-    <td><%= updated_information.draft %></td>
-    <td><%= updated_information.deleted_at %></td>
     <td><%= link_to 'Show', updated_information %></td>
-    <td><%= link_to 'Edit', edit_updated_information_path(updated_information) %></td>
-    <td><%= link_to 'Destroy', updated_information, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Updated information', new_updated_information_path %>
