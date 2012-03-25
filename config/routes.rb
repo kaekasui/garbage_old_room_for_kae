@@ -1,15 +1,12 @@
 Room::Application.routes.draw do
 
-  namespace :admin do resources :side_menus end
-
-  namespace :admin do resources :blogs end
-
-  resources :blogs
-
   namespace :admin do
+    resources :blogs
+    #resources :side_menus
     #resources :menus
-
   end
+
+  resources :blogs, only: [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
