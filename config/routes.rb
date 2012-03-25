@@ -1,7 +1,5 @@
 Room::Application.routes.draw do
 
-  resources :updated_informations
-
   namespace :admin do
     #resources :blogs
     #resources :updated_informations
@@ -10,6 +8,7 @@ Room::Application.routes.draw do
   end
 
   resources :blogs, only: [:index, :show]
+  resources :updated_informations, only: [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
