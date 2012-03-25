@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <b>Blog category code:</b>
-  <%= @blog.blog_category_code %>
-</p>
-
-<p>
   <b>Contents1:</b>
   <%= @blog.contents1 %>
 </p>
@@ -20,16 +15,3 @@
   <%= @blog.contents2 %>
 </p>
 
-<p>
-  <b>Draft:</b>
-  <%= @blog.draft %>
-</p>
-
-<p>
-  <b>Deleted at:</b>
-  <%= @blog.deleted_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>

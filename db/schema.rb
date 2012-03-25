@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324162352) do
+ActiveRecord::Schema.define(:version => 20120325002427) do
+
+  create_table "blogs", :force => true do |t|
+    t.string   "title"
+    t.integer  "blog_category_code"
+    t.text     "contents1"
+    t.text     "contents2"
+    t.boolean  "draft"
+    t.datetime "deleted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "menus", :force => true do |t|
     t.string   "title"
