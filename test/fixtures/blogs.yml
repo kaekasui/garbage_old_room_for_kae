@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  blog_category_code: 1
+  contents1: MyText
+  contents2: MyText
+  draft: false
+  deleted_at: 2012-03-25 09:24:27
+
+two:
+  title: MyString
+  blog_category_code: 1
+  contents1: MyText
+  contents2: MyText
+  draft: false
+  deleted_at: 2012-03-25 09:24:27
