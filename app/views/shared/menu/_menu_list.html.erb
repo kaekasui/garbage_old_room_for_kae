@@ -1,6 +1,6 @@
 <ul>
 <% @menus.each do |menu| %>
-  <li><%= menu.title %></li>
+  <li><%= link_to menu.title, eval("#{menu.path}") %></li>
   <ul><li><%= menu.introduction %></li></ul>
   <br />
 <% end %>
