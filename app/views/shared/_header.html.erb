@@ -1,2 +1,5 @@
 <h1><%= t("title.top") %></h1>
 
+<% @menus.each do |menu| %>
+  <%= menu.title %>
+<% end %>
