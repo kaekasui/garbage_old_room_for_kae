@@ -1,0 +1,10 @@
+<%= render :partial => "contents1", :locals => {:blog => blog} %>
+<tr>
+  <td>
+    <%#= link_to_unless(blog.contents2.nil?, t(".continue"), blog) do %>
+    <%# end %>
+  </td>
+</tr>
+<tr>
+  <td><%#= link_to image_tag(get_comment_icon_image) + "comments(#{blog.comment_counts})", blog_path(blog.id) + ".html#comment" %></td> 
+</tr>

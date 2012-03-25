@@ -1,22 +1,2 @@
-<h1>Listing blogs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Contents1</th>
-    <th>Contents2</th>
-    <th></th>
-  </tr>
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= to_br(blog.contents1).html_safe %></td>
-    <td><%= to_br(blog.contents2).html_safe %></td>
-    <td><%= link_to 'Show', blog %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<%= render :partial => @blogs, :spacer_template => "separator" %>
 
