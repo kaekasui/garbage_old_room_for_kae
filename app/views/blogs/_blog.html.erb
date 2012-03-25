@@ -1,8 +1,8 @@
 <%= render :partial => "contents1", :locals => {:blog => blog} %>
 <tr>
   <td>
-    <%#= link_to_unless(blog.contents2.nil?, t(".continue"), blog) do %>
-    <%# end %>
+    <%= link_to_unless(blog.contents2.nil?, t(".continue"), blog) do %>
+    <% end %>
   </td>
 </tr>
 <tr>

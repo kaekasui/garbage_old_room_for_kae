@@ -1,4 +1,19 @@
 ja:
+  date:
+    yesterday: "昨日"
+    today: "今日"
+    order:
+      - :year
+      - :month
+      - :day
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      very_short: "%m/%d"
+ 
+  ##########
+  # Title
+  ########## 
   title:
     top: "ヵェの部屋♪"
 
@@ -18,3 +33,6 @@ ja:
 今はブログしか置いていませんが、今後は描いた絵を載せたり\n作ったゲームをアップしたりなどしようと思っています。\nどうか気長にお待ちください。\n\n
 今後とも宜しくお願い致します＾＾\n\n"
 
+  blogs:
+    blog:
+      continue: "続きをみる..."

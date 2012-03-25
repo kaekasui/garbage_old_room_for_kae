@@ -1,7 +1,7 @@
 <tr>
-  <td><%= blog.title %><%#= link_to image_tag(get_icon_image) + blog.title, blog_path(blog.id) + ".html" %></td> 
-  <td><%= blog.created_at %><%#= l blog.created_at %></td>
+  <td><%= link_to blog.title, blog_path(blog.id) + ".html" %><%#= link_to image_tag(get_icon_image) + blog.title, blog_path(blog.id) + ".html" %></td> 
+  <td><%= l blog.created_at %></td>
 </tr>
 <tr>
-  <td colspan="2"><%#= to_br(sanitize_blog(blog.id, true)).html_safe %></td>
+  <td colspan="2"><%= to_br(sanitize_blog(blog.id, true)).html_safe %></td>
 </tr>
