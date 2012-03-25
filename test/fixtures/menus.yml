@@ -2,7 +2,7 @@ menu1:
   id: 1
   title: HOME
   introduction: このページです。
-  path: home_index_path
+  path: root_path
   admin: false
   disable: true
   position: 1
