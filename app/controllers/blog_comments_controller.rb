@@ -3,7 +3,6 @@ class BlogCommentsController < ApplicationController
   # GET /blog_comments.json
   def index
     @blog_comments = BlogComment.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @blog_comments }

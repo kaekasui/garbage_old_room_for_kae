@@ -6,5 +6,5 @@
   </td>
 </tr>
 <tr>
-  <td><%#= link_to image_tag(get_comment_icon_image) + "comments(#{blog.comment_counts})", blog_path(blog.id) + ".html#comment" %></td> 
+  <td><%= link_to "comments(#{blog.comment_counts})", blog_path(blog.id) + ".html#comment" %><%#= link_to image_tag(get_comment_icon_image) + "comments(#{blog.comment_counts})", blog_path(blog.id) + ".html#comment" %></td> 
 </tr>
