@@ -1,5 +1,1 @@
 <h1><%= link_to t("title.top"), root_path %></h1>
-
-<% @menus.each do |menu| %>
-  <%= link_to menu.title, eval("#{menu.path}") %>
-<% end %>

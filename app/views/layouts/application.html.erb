@@ -16,15 +16,26 @@
     <div class="header">
     <%= render "shared/header" %>
     <div>
-    <br />
 
-    <div class="row">
-      <div class="span7" id="main">
-        <%= yield %>
+    <div class"tabbable">
+
+      <ul class="nav nav-tabs">
+      <% @menus.each do |menu| %>
+      <li><%= link_to menu.title, eval("#{menu.path}") %></li>
+      <% end %>
+      </ul>
+
+      <div class="tab-content">
+        <div class="row">
+          <div class="span7" id="main">
+            <%= yield %>
+          </div>
+          <div class="span5" id="menu">
+            <%= render "shared/menu" %>
+          </div>
+        </div>
       </div>
-      <div class="span5" id="menu">
-        <%= render "shared/menu" %>
-      </div>
+
     </div>
 
     <div class="footer">
