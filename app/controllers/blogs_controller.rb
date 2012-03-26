@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
+
   before_filter :menu_name
+  before_filter :title_blog
 
   # GET /blogs
   # GET /blogs.json
@@ -27,5 +29,14 @@ class BlogsController < ApplicationController
 
   def menu_name
     @menu_name = Menu.menu_name(2)
+  end
+
+  def title_blog
+    @title = @title + "-" + @menu_name + "-"
+    if params[:id]
+      @blog = Blog.find(params[:id])
+      @blog_title = @blog.title
+      @title = @title + " : " + @blog_title if @blog_title
+    end
   end
 end
