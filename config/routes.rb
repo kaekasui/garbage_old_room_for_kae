@@ -10,7 +10,10 @@ Room::Application.routes.draw do
   end
 
   resources :blogs, only: [:index, :show] do
-    resources :blog_comments
+    resources :blog_comments, except: [:index, :show] do
+      post 'confirm' => 'blog_comments#confirm', :on => :collection
+      get 'delete' => 'blog_comments#delete', :on => :member
+    end
   end
   resources :updated_informations, only: [:index, :show]
 

@@ -8,8 +8,9 @@
     <td><%#= link_to image_tag(get_comment_icon_image) + "comments(#{@blog.comment_counts})", blog_path(@blog.id) + '.html#comment' %></td>  </tr>
 </table>
 
-<%#= form_for :blog_comment, :url => confirm_blog_blog_comments_path(:blog_id => @blog.id) do |f| %>  <%#= render :partial => "blog_comments/form", :locals => {:f => f} %>
-<%# end %> 
+<%= form_for :blog_comment, html: {class: "form-horizontal"}, :url => confirm_blog_blog_comments_path(blog_id: @blog.id) do |f| %>
+<%= render :partial => "blog_comments/form", :locals => {:f => f} %>
+<% end %> 
 <br /> 
 
 <table>
