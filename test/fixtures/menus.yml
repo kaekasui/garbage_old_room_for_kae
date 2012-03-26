@@ -1,6 +1,6 @@
 menu1:
   id: 1
-  title: HOME
+  title: TOP
   introduction: このページです。
   path: root_path
   admin: false
