@@ -8,6 +8,7 @@ menu1:
   position: 1
   created_at: 2011-10-06 21:19:11 +0900
   updated_at: 2011-10-06 21:19:11 +0900
+  name: ヵェの部屋♪
 
 menu2:
   id: 2
@@ -19,4 +20,4 @@ menu2:
   position: 2
   created_at: 2011-10-06 21:19:16 +0900
   updated_at: 2011-10-06 21:19:16 +0900
-
+  name: ☆ヵェの日記☆
