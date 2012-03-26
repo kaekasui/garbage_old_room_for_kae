@@ -19,14 +19,18 @@ ja:
 
   ##########
   # SideMenu
-  ########## 
+  ##########
   side_menu:
-    author: "Author:"
-    author_value: "架慧(かえ)"
-    twitter: "Twitter:"
-    twitter_value: "@kae_kasui"
-    favorite: "Favorite:" 
-    favorite_value: "甘いもの/漫画/ものづくり系/みかん/ゲーム/電気製品/毛深い生き物/Ruby on Rails/アニメ/etc..."
+    profile:
+      title: "プロフィール"
+      author: "Author:"
+      author_value: "架慧(かえ)"
+      twitter: "twitter"
+      twitter_value: "@kae_kasui"
+      favorite: "Favorite:" 
+      favorite_value: "甘いもの/漫画/ものづくり系/みかん/ゲーム/電気製品/毛深い生き物/Ruby on Rails/アニメ/etc..."
+    menu_list:
+      title: "メニュー"
 
   ##########
   # View

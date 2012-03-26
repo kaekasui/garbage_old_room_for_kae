@@ -1,3 +1,5 @@
+<%= render :partial => "shared/menu/menu_title", :locals => {:menu_title => t("side_menu.menu_list.title")} %>
+<br />
 <ul>
 <% @menus.each do |menu| %>
   <li><%= link_to menu.title, eval("#{menu.path}") %></li>
