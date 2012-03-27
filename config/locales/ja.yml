@@ -33,6 +33,16 @@ ja:
       title: "メニュー"
 
   ##########
+  # kaminari
+  ##########
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "..."
+  ##########
   # View
   ##########
   top:
