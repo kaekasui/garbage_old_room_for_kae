@@ -1,0 +1,60 @@
+admin_menu1:
+  id: 1
+  admin_menu_id:
+  title: "全体"
+  path: "#"
+
+admin_menu2:
+  id: 2
+  admin_menu_id: 1
+  title: "アクセス状況"
+  path: "#"
+
+admin_menu3:
+  id: 3
+  admin_menu_id:
+  title: "ブログ"
+  path: "#"
+
+admin_menu4:
+  id: 4
+  admin_menu_id: 3
+  title: "ブログ一覧"
+  path: "#"
+
+admin_menu5:
+  id: 5
+  admin_menu_id: 3
+  title: "コメント一覧"
+  path: "#"
+
+admin_menu6:
+  id: 6
+  admin_menu_id: 3
+  title: "アクセス履歴"
+  path: "#"
+
+admin_menu7:
+  id: 7
+  admin_menu_id: 3
+  title: "メール"
+  path: "#"
+
+admin_menu8:
+  id: 8
+  admin_menu_id:
+  title: "設定"
+  path: "#"
+
+admin_menu9:
+  id: 9
+  admin_menu_id: 8
+  title: "レイアウト"
+  path: "#"
+
+admin_menu10:
+  id: 10
+  admin_menu_id: 8
+  title: "バージョン"
+  path: "#"
+ 
