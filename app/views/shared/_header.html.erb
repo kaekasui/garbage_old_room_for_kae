@@ -12,7 +12,7 @@
 
     <ul class="nav pull-right">
       <% if current_user %>
-      <li><%= current_user.name %></li>
+      <li><%= link_to "@" + current_user.name, "https://twitter.com/#{current_user.name}", target: "_blank" %></li>
       <li><%= link_to "Logout" , logout_path %></li>
       <% else %>
       <li class="dropdown" id="menu1">
