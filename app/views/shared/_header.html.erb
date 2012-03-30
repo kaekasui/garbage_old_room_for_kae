@@ -6,7 +6,20 @@
     <ul class="nav">
       <% @menus.each do |menu| %>
 <%# TODO: data_original_title => data-original-title %>
-      <li><%= link_to menu.title, eval("#{menu.path}"), rel: "tooltip", data_original_title: "aaa" %></li>
+        <li><%= link_to menu.title, eval("#{menu.path}"), rel: "tooltip", data_original_title: "aaa" %></li>
+      <% end %>
+      <% if current_user %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          管理
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "設定", "#" %></li>
+          <li><%= link_to "全体", "#" %></li>
+          <li><%= link_to "ブログ", "#" %></li>
+        </ul>
+      </li>
       <% end %>
     </ul>
 
