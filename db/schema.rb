@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326172017) do
+ActiveRecord::Schema.define(:version => 20120330142058) do
 
   create_table "blog_comments", :force => true do |t|
     t.integer  "blog_id"
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(:version => 20120326172017) do
     t.datetime "updated_at"
     t.string   "mini_label"
     t.string   "mini_label_option"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "screen_name"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "versions", :force => true do |t|
