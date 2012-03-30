@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   #---------------------------#
   # self.create_with_omniauth #
   #---------------------------#
-  def self.create_with_omniauth( auth )
+=begin  def self.create_with_omniauth( auth )
     user = User.new
     user[:provider] = auth["provider"]
     user[:uid] = auth["uid"]
@@ -21,4 +21,5 @@ class User < ActiveRecord::Base
     
     return user
   end
+=end
 end
