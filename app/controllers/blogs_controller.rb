@@ -19,6 +19,8 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @blog_comment = BlogComment.new
+    @blog_comments = @blog.blog_comments
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @blog }

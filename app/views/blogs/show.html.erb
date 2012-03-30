@@ -14,8 +14,6 @@
 <% end %> 
 <br /> 
 
-<table>
-  <tr><td>
-    <%#= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
-  </td></tr>
+<table class="table">
+  <%= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
 </table>
