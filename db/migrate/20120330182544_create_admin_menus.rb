@@ -1,6 +1,6 @@
-class CreateAdminAdminMenus < ActiveRecord::Migration
+class CreateAdminMenus < ActiveRecord::Migration
   def change
-    create_table :admin_admin_menus do |t|
+    create_table :admin_menus do |t|
       t.integer :admin_menu_id
       t.string :title
       t.string :path

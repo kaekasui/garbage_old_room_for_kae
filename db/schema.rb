@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330144309) do
+ActiveRecord::Schema.define(:version => 20120330182544) do
+
+  create_table "admin_menus", :force => true do |t|
+    t.integer  "admin_menu_id"
+    t.string   "title"
+    t.string   "path"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "blog_comments", :force => true do |t|
     t.integer  "blog_id"
@@ -27,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.boolean  "admin"
     t.boolean  "mixi"
     t.boolean  "draft"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "blogs", :force => true do |t|
@@ -38,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.text     "contents2"
     t.boolean  "draft"
     t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "menus", :force => true do |t|
@@ -49,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.boolean  "admin"
     t.boolean  "disable"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "name"
   end
 
@@ -59,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.string   "title"
     t.integer  "position"
     t.boolean  "disable"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tweets", :force => true do |t|
@@ -78,8 +86,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.text     "comment"
     t.boolean  "draft"
     t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "mini_label"
     t.string   "mini_label_option"
   end
@@ -99,8 +107,8 @@ ActiveRecord::Schema.define(:version => 20120330144309) do
     t.boolean  "used"
     t.boolean  "current"
     t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
