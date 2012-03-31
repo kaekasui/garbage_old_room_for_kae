@@ -45,8 +45,8 @@
 
 <% if @admin_tab_menus %>
 <div class="container">
-  <div class="subnav">
-    <ul class="nav nav-pills">
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
     <% @admin_tab_menus.each do |menu| %>
       <li><%= link_to menu.title, eval("#{menu.path}") %></li>
     <% end %>
