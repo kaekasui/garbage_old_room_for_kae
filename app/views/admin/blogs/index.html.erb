@@ -6,15 +6,13 @@
     <th>Draft</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @admin_blogs.each do |admin_blog| %>
   <tr>
     <td><%= l admin_blog.created_at %></td>
-    <td><%= admin_blog.title %></td>
+    <td><%= link_to admin_blog.title, admin_blog_path(admin_blog) %></td>
     <td><%= admin_blog.draft %></td>
-    <td><%= link_to 'Show', admin_blog %></td>
     <td><%= link_to 'Edit', edit_admin_blog_path(admin_blog) %></td>
     <td><%= link_to 'Destroy', admin_blog, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
