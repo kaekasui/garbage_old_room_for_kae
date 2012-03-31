@@ -31,7 +31,8 @@ ja:
       favorite_value: "甘いもの/漫画/ものづくり系/みかん/ゲーム/電気製品/毛深い生き物/Ruby on Rails/アニメ/etc..."
     menu_list:
       title: "メニュー"
-
+    recent_blogs:
+      title: "最近の記事"
   ##########
   # kaminari
   ##########

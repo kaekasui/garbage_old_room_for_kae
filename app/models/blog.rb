@@ -3,4 +3,7 @@ class Blog < Admin::Blog
  
   scope :no_draft, where("draft != true")
 
+  def self.recent_blogs
+    self.limit(5)
+  end
 end

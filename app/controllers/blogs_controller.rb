@@ -1,7 +1,9 @@
+# encoding: utf-8
 class BlogsController < ApplicationController
 
   before_filter :menu_name
   before_filter :title_blog
+  before_filter :new_blogs
 
   # GET /blogs
   # GET /blogs.json
@@ -38,7 +40,12 @@ class BlogsController < ApplicationController
     if params[:id]
       @blog = Blog.find(params[:id])
       @blog_title = @blog.title
-      @title = @title + " : " + @blog_title if @blog_title
+      #@title = @title + " : " + @blog_title if @blog_title
+      @title = @title + " : " + @blog_title.force_encoding("utf-8") if @blog_title
     end
+  end
+
+  def new_blogs
+    @recent_blogs = Blog.recent_blogs
   end
 end
