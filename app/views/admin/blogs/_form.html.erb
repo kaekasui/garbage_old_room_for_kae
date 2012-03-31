@@ -1,4 +1,4 @@
-<%= form_for(@admin_blog) do |f| %>
+<%= form_for @admin_blog, html: {class: "form-horizontal"} do |f| %>
   <% if @admin_blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@admin_blog.errors.count, "error") %> prohibited this admin_blog from being saved:</h2>
@@ -11,31 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="control-group">
+    <%= f.label :created_at, class: "control-label" %>
+    <div class="controls">
+      <%= f.datetime_select :created_at, datetime_separator: "　", include_seconds: true, use_month_numbers: true, class: "date_time" %></td>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :blog_category_code %><br />
-    <%= f.number_field :blog_category_code %>
+
+  <div class="control-group">
+    <%= f.label :title, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :contents1 %><br />
-    <%= f.text_area :contents1 %>
+
+  <div class="control-group">
+    <%= f.label :contents1, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_area :contents1, class: "span5", rows: "4" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :contents2 %><br />
-    <%= f.text_area :contents2 %>
+
+  <div class="control-group">
+    <%= f.label :contents2, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_area :contents2, class: "span5", rows: "8" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :draft %><br />
-    <%= f.check_box :draft %>
+
+  <div class="control-group">
+    <%= f.label :draft, class: "control-label" %>
+    <div class="controls">
+      <%= f.check_box :draft %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :deleted_at %><br />
-    <%= f.check_box :deleted_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit class: "btn" %>
+    </div>
   </div>
 <% end %>

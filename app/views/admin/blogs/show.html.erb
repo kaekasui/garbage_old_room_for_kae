@@ -1,35 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @admin_blog.title %>
-</p>
+<table class="table">
 
-<p>
-  <b>Blog category code:</b>
-  <%= @admin_blog.blog_category_code %>
-</p>
+  <tr>
+    <th>Created at:</th>
+    <td><%= @admin_blog.created_at %></td>
 
-<p>
-  <b>Contents1:</b>
-  <%= @admin_blog.contents1 %>
-</p>
+  <tr>
+    <th>Title:</th>
+    <td><%= @admin_blog.title %></td>
+  </tr>
 
-<p>
-  <b>Contents2:</b>
-  <%= @admin_blog.contents2 %>
-</p>
+  <tr>
+    <th>Contents1:</th>
+    <td><%= @admin_blog.contents1 %></td>
+  </tr>
 
-<p>
-  <b>Draft:</b>
-  <%= @admin_blog.draft %>
-</p>
+  <tr>
+    <th>Contents2:</th>
+    <td><%= @admin_blog.contents2 %></td>
+  </tr>
 
-<p>
-  <b>Deleted at:</b>
-  <%= @admin_blog.deleted_at %>
-</p>
+  <tr>
+    <th>Draft:</th>
+    <td><%= @admin_blog.draft %></td>
+  </tr>
 
+</table>
 
-<%= link_to 'Edit', edit_admin_blog_path(@admin_blog) %> |
-<%= link_to 'Back', admin_blogs_path %>
+<%= link_to 'Edit', edit_admin_blog_path(@admin_blog) %>
