@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :title
   before_filter :side_menu
+  before_filter :admin_menu
   before_filter :current_version
 
   # セッション有効期限延長
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def side_menu
     @menus = Menu.find_all_by_disable(true)
+  end
+
+  def admin_menu
+    @admin_menus = AdminMenu.find_all_by_admin_menu_id(nil)
   end
 
   def current_version
@@ -38,6 +43,4 @@ class ApplicationController < ActionController::Base
   end
   
   helper_method :current_user
-
-
 end

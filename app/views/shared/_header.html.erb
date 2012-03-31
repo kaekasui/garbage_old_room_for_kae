@@ -15,9 +15,9 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><%= link_to "全体", "#" %></li>
-          <li><%= link_to "ブログ", admin_blogs_path %></li>
-          <li><%= link_to "設定", "#" %></li>
+          <% @admin_menus.each do |admin_menu| %>
+            <li><%= link_to admin_menu.title, eval("#{admin_menu.path}") %></li>
+          <% end %>
         </ul>
       </li>
       <% end %>

@@ -18,7 +18,7 @@ admin_menu3:
   id: 3
   admin_menu_id:
   title: "ブログ"
-  path: "#"
+  path: admin_blogs_path
   created_at: 2012-03-31 13:47:00
   updated_at: 2012-03-31 13:47:00
 
