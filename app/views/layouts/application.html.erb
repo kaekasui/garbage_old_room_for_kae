@@ -29,14 +29,7 @@
 
     <% else %>
       <div class="row">
-        <div class="tabbable">
-          <ul class="nav nav-tabs">
-            <%= render "shared/admin_tab_menu" %>
-          </ul>
-          <div class="tab-content">
-            <%= yield %>
-          </div>
-        </div>
+        <%= yield %>
       </div>
 
     <% end %>
