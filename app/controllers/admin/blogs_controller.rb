@@ -4,7 +4,8 @@ class Admin::BlogsController < ApplicationController
   # GET /admin/blogs
   # GET /admin/blogs.json
   def index
-    @admin_blogs = Admin::Blog.all
+    # @admin_blogs = Admin::Blog.all
+    @admin_blogs = Admin::Blog.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

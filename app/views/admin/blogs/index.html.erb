@@ -1,3 +1,5 @@
+<%= paginate @admin_blogs %>
+
 <table class="table">
   <tr>
     <th>Created at</th>
@@ -19,7 +21,5 @@
   </tr>
 <% end %>
 </table>
-
-<br />
 
 <%= link_to 'New Blog', new_admin_blog_path %>
