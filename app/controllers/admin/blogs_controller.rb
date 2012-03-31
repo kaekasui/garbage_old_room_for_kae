@@ -1,4 +1,6 @@
 class Admin::BlogsController < ApplicationController
+  before_filter :admin_menu_name
+
   # GET /admin/blogs
   # GET /admin/blogs.json
   def index
@@ -79,5 +81,12 @@ class Admin::BlogsController < ApplicationController
       format.html { redirect_to admin_blogs_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def admin_menu_name
+    @admin_menu_name = AdminMenu.find(3).title
+    @admin_tab_menus = AdminMenu.find_all_by_admin_menu_id(3)
   end
 end
