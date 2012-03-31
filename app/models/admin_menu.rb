@@ -1,3 +1,3 @@
-class AdminMenu < Admin::AdminMenue
+class AdminMenu < Admin::AdminMenu
 
 end

@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 #gem 'rails', '3.1.0'
 gem 'rails', '3.2.2'
 
+gem 'mysql', '2.8.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -14,6 +15,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'i18n'
 gem 'nokogiri'
 gem 'jquery-rails'
 
