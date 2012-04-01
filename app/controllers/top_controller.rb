@@ -9,6 +9,6 @@ class TopController < ApplicationController
   private
 
   def menu_name
-    @menu_name = Menu.menu_name(1)
+    @menu_name = Menu.menu_name(1) if Menu.menu_name(1)
   end
 end
