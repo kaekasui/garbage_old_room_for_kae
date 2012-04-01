@@ -3,5 +3,5 @@
   <td><%= l blog.created_at %></td>
 </tr>
 <tr>
-  <td colspan="2"><%= to_br(sanitize_blog(blog.id, true)).html_safe %></td>
+  <td colspan="2"><%= to_br(blog.contents1).html_safe %><%#= to_br(sanitize_blog(blog.id, true)).html_safe %></td>
 </tr>

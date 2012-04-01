@@ -3,7 +3,7 @@
 <table class="table">
 <%= render :partial => "contents1", :locals => {:blog => @blog} %>
   <tr>
-    <td colspan="2"><%= to_br(sanitize_blog(@blog.id, false)).html_safe %></td>   </tr>
+    <td colspan="2"><%= to_br(@blog.contents2).html_safe %><%#= to_br(sanitize_blog(@blog.id, false)).html_safe %></td>   </tr>
   <tr>
     <td><%= link_to "comments(#{@blog.comment_counts})", blog_path(@blog.id) + ".html#comment" %>
 <%#= link_to image_tag(get_comment_icon_image) + "comments(#{@blog.comment_counts})", blog_path(@blog.id) + '.html#comment' %></td>  </tr>
