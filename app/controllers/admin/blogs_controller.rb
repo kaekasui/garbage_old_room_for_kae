@@ -63,7 +63,7 @@ class Admin::BlogsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog.update_attributes(params[:admin_blog])
-        format.html { redirect_to @admin_blog, notice: 'Blog was successfully updated.' }
+        format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
