@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
 
   private
 
+=begin
   #---------------------------#
   # self.create_with_omniauth #
   #---------------------------#
-=begin
   def self.create_with_omniauth( auth )
     user = User.new
     user[:provider] = auth["provider"]
