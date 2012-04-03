@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "bootstrap/bootstrap.min" %>
+  <%= stylesheet_link_tag    "color/green" %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="padding-top:60px">
+
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="container">
+
+    <% if @menu_name %>
+      <div class="row">
+        <div class="span8" id="main">
+          <%= yield %>
+        </div>
+      <div class="span4" id="menu">
+        <%= render "shared/menu" %>
+      </div>
+
+    <% else %>
+      <div class="row">
+        <%= yield %>
+      </div>
+
+    <% end %>
+  </div>
+  
+  <div class="footer">
+    <%= render "shared/footer" %>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+  $(function() {
+   // $('a[rel=tooltip]').tooltip();
+  });
+</script>
+</body>
+</html>
