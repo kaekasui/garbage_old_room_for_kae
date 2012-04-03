@@ -14,7 +14,7 @@
   <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
 </head>
 
-<body style="padding-top:60px">
+<body>
 
   <div class="header">
     <%= render "shared/header" %>
@@ -27,8 +27,9 @@
         <div class="span8" id="main">
           <%= yield %>
         </div>
-      <div class="span4" id="menu">
-        <%= render "shared/menu" %>
+        <div class="span4" id="menu">
+          <%= render "shared/menu" %>
+        </div>
       </div>
 
     <% else %>

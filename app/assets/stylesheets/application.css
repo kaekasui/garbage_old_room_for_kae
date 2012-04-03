@@ -12,10 +12,6 @@
  *= require_tree .
 */
 
-body {
-  background-image:url("background_images/clover.jpg");
-}
-
 .td_right {
   text-align: right;
 }
