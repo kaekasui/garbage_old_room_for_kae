@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330182544) do
+ActiveRecord::Schema.define(:version => 20120403055517) do
 
   create_table "admin_menus", :force => true do |t|
     t.integer  "admin_menu_id"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(:version => 20120330182544) do
     t.string   "name"
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "side_menus", :force => true do |t|
     t.integer  "menu_id"
     t.string   "title"
@@ -69,6 +76,16 @@ ActiveRecord::Schema.define(:version => 20120330182544) do
     t.boolean  "disable"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "title"
+    t.string   "span"
+    t.integer  "priority"
+    t.datetime "added_at"
+    t.datetime "completed_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "tweets", :force => true do |t|
