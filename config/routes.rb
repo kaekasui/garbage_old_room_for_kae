@@ -1,6 +1,8 @@
 Room::Application.routes.draw do
 
 
+  resources :tasks
+
   resources :posts
 
   namespace :admin do resources :admin_menus end

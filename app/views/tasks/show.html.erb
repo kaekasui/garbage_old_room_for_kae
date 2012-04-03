@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @task.title %>
+</p>
+
+<p>
+  <b>Span:</b>
+  <%= @task.span %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @task.priority %>
+</p>
+
+<p>
+  <b>Added at:</b>
+  <%= @task.added_at %>
+</p>
+
+<p>
+  <b>Completed at:</b>
+  <%= @task.completed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
