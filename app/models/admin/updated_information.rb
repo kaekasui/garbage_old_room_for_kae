@@ -3,4 +3,8 @@ class Admin::UpdatedInformation < ActiveRecord::Base
 
   default_scope where("deleted_at is null").order("created_at desc")
 
+  def version_name
+    Version.find(self.version_id).name
+  end
+
 end
