@@ -1,2 +1,3 @@
-class BlogLink < ActiveRecord::Base
+class BlogLink < Admin::BlogLink
+
 end
