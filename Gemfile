@@ -46,3 +46,5 @@ end
 gem 'omniauth-twitter'
 gem 'kaminari'
 
+
+gem 'taps'
