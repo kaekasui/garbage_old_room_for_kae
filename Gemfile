@@ -37,7 +37,8 @@ end
 
 # For Heroku
 group :production do
-  gem 'pg'
+#  gem 'pg'
+  gem 'mysql2'
   gem 'thin'
 end
 
