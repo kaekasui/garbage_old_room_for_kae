@@ -1,0 +1,7 @@
+<%= render :partial => "shared/menu/menu_title", :locals => {:menu_title => t("side_menu.blog_links.title")} %>
+
+<ul>
+<% @blog_links.each do |link| %>
+  <li><%= link_to link.title, link.url, target: "_blank" %></li>
+<% end %>
+</ul>

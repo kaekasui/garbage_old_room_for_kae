@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
   before_filter :menu_name
   before_filter :title_blog
   before_filter :new_blogs
+  before_filter :blog_links
 
   # GET /blogs
   # GET /blogs.json
@@ -47,5 +48,9 @@ class BlogsController < ApplicationController
 
   def new_blogs
     @recent_blogs = Blog.recent_blogs
+  end
+
+  def blog_links
+    @blog_links = BlogLink.no_draft
   end
 end

@@ -33,6 +33,8 @@ ja:
       title: "メニュー"
     recent_blogs:
       title: "最近の記事"
+    blog_links:
+      title: "リンク"
   ##########
   # kaminari
   ##########
