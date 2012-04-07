@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 
   private
 
-=begin
   #---------------------------#
   # self.create_with_omniauth #
   #---------------------------#
@@ -22,5 +21,4 @@ class User < ActiveRecord::Base
     
     return user
   end
-=end
 end

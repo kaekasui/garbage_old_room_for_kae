@@ -10,6 +10,6 @@ else
   #--------------------#
   # Production環境以外 #
   #--------------------#
-  DEFAULT_PROVIDER = "developer"
-  # DEFAULT_PROVIDER = "twitter"
+  # DEFAULT_PROVIDER = "developer"
+  DEFAULT_PROVIDER = "twitter"
 end
