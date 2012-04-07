@@ -1,0 +1,23 @@
+<h1>Listing admin_admin_users</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_admin_users.each do |admin_admin_user| %>
+  <tr>
+    <td><%= admin_admin_user.user_id %></td>
+    <td><%= link_to 'Show', admin_admin_user %></td>
+    <td><%= link_to 'Edit', edit_admin_admin_user_path(admin_admin_user) %></td>
+    <td><%= link_to 'Destroy', admin_admin_user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Admin user', new_admin_admin_user_path %>
