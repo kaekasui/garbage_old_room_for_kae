@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
+  has_one :admin_user
   has_many :tweets
+
+  def admin_user?
+    Admin::AdminUser.find_by_user_id(self.id).blank? ? false : true
+  end
 
   private
 

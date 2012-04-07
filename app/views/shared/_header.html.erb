@@ -8,7 +8,7 @@
 <%# TODO: data_original_title => data-original-title %>
         <li><%= link_to menu.title, eval("#{menu.path}"), rel: "tooltip", data_original_title: "aaa" %></li>
       <% end %>
-      <% if current_user %>
+      <% if current_user and current_user.admin_user? %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           管理
@@ -25,7 +25,7 @@
 
     <ul class="nav pull-right">
       <% if current_user %>
-      <li><%= link_to "@" + current_user.name, "https://twitter.com/#{current_user.name}", target: "_blank" %></li>
+      <li><%= link_to "@" + current_user.screen_name, "https://twitter.com/#{current_user.screen_name}", target: "_blank" %></li>
       <li><%= link_to "Logout" , logout_path %></li>
       <% else %>
       <li class="dropdown" id="menu1">
