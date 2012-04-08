@@ -11,12 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408025801) do
+ActiveRecord::Schema.define(:version => 20120408093435) do
 
   create_table "access_counts", :force => true do |t|
     t.integer  "menu_id"
     t.date     "access_at"
     t.integer  "cnt"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "admin_mail_forms", :force => true do |t|
+    t.string   "name"
+    t.string   "mail"
+    t.text     "content"
+    t.string   "ip"
+    t.string   "host"
+    t.boolean  "check"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -81,6 +92,14 @@ ActiveRecord::Schema.define(:version => 20120408025801) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "mail_forms", :force => true do |t|
+    t.string   "name"
+    t.string   "mail"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "menus", :force => true do |t|

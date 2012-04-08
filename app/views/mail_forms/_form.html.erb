@@ -1,29 +1,33 @@
-<%= form_for(@mail_form) do |f| %>
-  <% if @mail_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@mail_form.errors.count, "error") %> prohibited this mail_form from being saved:</h2>
+<a name="mail_form"></a>
+<p id="notice"><%= notice %></p>
 
-      <ul>
-      <% @mail_form.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for :mail_forms, html: {class: "form-vertical"}, url: {action: "create", controller:"mail_forms"} do |f| %>
+
+  <div class="control-group">
+  <%= f.label :name, class: "control-label" %>
+    <div class="controls">
+  <%= f.text_field :name %>
     </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+  <%= f.label :mail, class: "control-label" %>
+    <div class="controls">
+  <%= f.text_field :mail %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
+
+  <div class="control-group">
+  <%= f.label :content, class: "control-label" %>
+    <div class="controls">
+  <%= f.text_area :content, class: "span3", rows: "4" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+
+  <div class="control-group">
+    <div class="controls">
+  <%= f.submit class: "btn" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

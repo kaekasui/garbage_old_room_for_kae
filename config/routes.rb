@@ -2,7 +2,6 @@ Room::Application.routes.draw do
 
   namespace :admin do resources :mail_forms end
 
-  resources :mail_forms
 
   namespace :admin do resources :admin_users end
 
@@ -29,6 +28,7 @@ Room::Application.routes.draw do
       get 'delete' => 'blog_comments#delete', :on => :member
     end
   end
+  resources :mail_forms, only: [:create]
   resources :updated_informations, only: [:index, :show]
 
   # The priority is based upon order of creation:
