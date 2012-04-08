@@ -12364,6 +12364,8 @@ herokuのホームページにもfreeって書いてますよね！\
 \
 https://addons.heroku.com/amazon_rds\
 \
+\
+\
 ですが、落とし穴があってですね。\
 接続は無料でも、利用料が無料というわけじゃないんですね。（たぶん）\
 \
@@ -12374,25 +12376,34 @@ https://addons.heroku.com/amazon_rds\
 （私もまさか他にアドオンがあるとは思ってませんでした）\
 \
 そのアドオンというのがコレ。\
+確か10MBまでなら無料です！！！！\
 「Xeround Croud Database」\
 https://addons.heroku.com/xeround\
+\
+\
 \
 まぁ、MySQL対応だよーっとか、herokuホームページをちゃんと読めばわかるんですがね！！！！\
 いやいや、英語だし！？そんな読んでられないよ！？みたいなね。・・・思います・・・よね。。\
 \
-とにかく、このアドオンの使い方を紹介しようと思います。\
+\
+とにかく、このアドオンの使い方を以下に紹介します。\
 まぁ以下のURLを参考に行った事を日本語で書いただけなのですが。\
 http://benatkin.com/2011/10/13/rails-3-1-and-xeround-mysql-on-heroku/\
+\
+\
+\
 \
 1. アドオンの追加\
 \
 まず、MySQLに繋げたいアプリケーションで、このアドオンを追加します。\
+\
 \
 2. アドオンの管理\
 \
 追加できたら、右上あたりに「Add-ons」のメニューで「Xeround Croud Database」を開きます。\
 ここで、データベースの情報を編集したりいろいろします。詳細は割愛します。（ぇぇ\
 まぁ、特に修正することもあまりありません。パスワードくらいかしら・・・。\
+\
 \
 3. Gemfileの編集\
 \
@@ -12403,6 +12414,7 @@ end\
 上記内容をGemfileに追加します。\
 別に常にmysql2を利用している場合はproductionモードでなくてもよいですが・・・。\
 つか、mysqlに接続できればいいので、mysql2じゃなくてもよかったり・・・。\
+\
 \
 4. herokuの環境設定\
 \
@@ -12416,10 +12428,13 @@ heroku config:add DATABASE_URL='mysql2://{{username}}:{{password}}@{{hostname}}:
 私の場合は、mysql://appxxxxxx:password@instance000000.db.xeround.com.:5697/appxxxxxx\
 といったよーな感じの形になりました。\
 \
+\
 5. herokuから接続\
 \
 herokuにpushしているアプリケーションで、以下コマンドを実施して実際に構築してみます。\
 $ heroku rake db:migrate\
+\
+\
 \
 \
 エラーでなけりゃ、以上です。><*\
@@ -12427,9 +12442,500 @@ $ heroku rake db:migrate\
 参考にならんかもしれんですが、試してみてくださーい。\
 \
 \
-あ、確か10MBまでなら無料です！！！！\
 わからないことあったら、コメントくだされば\
 （私の）わかる範囲でお答えしまーす。丿\
 \
 \
-でわでゎーーー☆,0,\N,2012-04-08 04:20:29,2012-04-08 05:11:43
+でわでゎーーー☆,0,\N,2012-04-08 04:20:29,2012-04-08 12:51:11
+980190965,Rails3.1のWebアプリ作成方法,\N,Rails3.1がでてまだ日が浅い(?)ですね～。\
+\
+詳細を確認したり調べたりする前に、実際に環境を構築してみることにしました。,以下手順に従ってすぐにアプリケーション作成が開始できるようになりました。\
+\
+\
+\
+①rvmを利用してgemsetを作ります。\
+\
+rvmはバージョンをいつでも切り替えることができるので便利です。是非、入れておいてください！\
+\
+\
+rvmの使用方法については、ココでは割愛させていただきます＞＜\
+\
+$ rvm gemset create [gemset名]\
+$ rvm use @[gemset名]\
+\
+今回、「rails3.1」というgemsetを作りました。\
+\
+$ rvm gemset create rails3.1\
+$ rvm use @rails3.1\
+\
+\
+②railsの3.1を入手します。\
+\
+$ gem install rails -v 3.1\
+\
+③インストールできたら、バージョンを確認します。バージョンが3.1になっていることを確認してください。\
+\
+$ rails -v\
+\
+\
+④さっそくRailsのプロジェクトを作ってみます。\
+\
+$ rvmsudo rails new [プロジェクト名] -d [データベースの種類]\
+\
+今回、プロジェクト名「rails_project」のプロジェクトを作成します。\
+\
+また、指定のデータベースはmysqlを利用することとします。\
+これらの条件を満たすコマンドは以下となります。\
+\
+$ rvmsudo rails new rails_project -d mysql\
+\
+\
+⑤次に、scaffoldを作成してみようと思います。\
+\
+ですが、ここで以下のようなエラーが発生しました。\
+/home/[User_name]/.rvm/gems/ruby-1.9.2-p290@rails_project/gems/execjs-1.2.9/lib/execjs/runtimes.rb:47:in `autodetect': Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable)\
+\
+解決策はありました！！！\
+\
+Gemfileに以下を追加してください。\
+\
+gem 'therubyracer'\
+\
+そして、Gemfileを読み込みます。\
+\
+$ rvmsudo bundle install\
+\
+\
+⑥今度こそ、scaffoldを作成します。\
+\
+scaffoleの作成は、以下コマンドです。\
+今回は「name」フィールドを編集するscaffold「item」を作成します。\
+\
+$ rvmsudo rails generate scaffold item name:string\
+\
+必要があれば、database.ymlの修正を行って下さい。\
+\
+$ rake db:create\
+$ rake db:migrate\
+\
+\
+⑦サーバーを起動し、Webブラウザで接続してみましょう！！\
+\
+$ rvmsudo rails server\
+\
+ポートの指定、環境の指定をする場合はそれぞれオプション「-p」「-e」を指定するとイイです。\
+\
+接続するデフォルトのURLは↓です。\
+http://localhost:3000/items/\
+\
+新規作成、編集、削除ができる画面が表示されれば成功です！！\
+,0,\N,2011-11-26 16:44:53,2012-04-08 11:59:30
+980190966,メイプルストーリー(韓国)ユーザー1320万人の個人情報流出,\N,ハッキング方法を検索してたら、こんなのが引っかかってしまった。\
+\
+\
+http://www.47news.jp/CN/201111/CN2011112601003442.html ,記事が今日（昨日？）やんけー！やっちまったなネクソン！！！！ \
+\
+\
+確かにメイプルストーリーのセキュリティの甘さはすごかったし、 \
+バグもヒドイし、いつかやられるとは思っていたがｐｑ \
+\
+なんかデータベースも一元管理できてないみたいだったし、ソースもスパゲティなのが私にもわかったしなぁ・・・。 \
+\
+ハッキングされてしもーたそうで。。 \
+リアルマネー使ってるゲームなのに、管理体制は非常に甘かったと言えるよね。 \
+\
+ちょこちょこショップのバグ発生してたし。 \
+\
+サイトの方もやばかったしね！ \
+\
+セキュリティは、守ろうと思えば比較的強固に守れるんだぞ！！ \
+\
+というか、そもそもハッキングは犯罪だぞー！！？＞＜； \
+とかって、一番↑の私の発言はどこへやら。 \
+\
+\
+大丈夫！確か警察とかなんとか省の許可は得ているはず！ｍ９ \
+\
+ってわけで、ほんまハッキング期間短くて、あんま時間ないからさらばじゃーﾉｼ,0,\N,2011-11-22 20:40:55,2012-04-08 11:43:04
+980190967,Mac購入！！！！！,\N,Mac購入しちった☆\
+\
+うっす！まじうっす！！\
+<a href="http://www.amazon.co.jp/gp/product/B00485CHJU/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=kaekasui-22&linkCode=as2&camp=247&creative=1211&creativeASIN=B00485CHJU" target="_blank">Mac Air 11インチ</a><img src="http://www.assoc-amazon.jp/e/ir?t=kaekasui-22&l=as2&o=9&a=B00485CHJU" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />☆,Macをいろいろカスタマイズしまくりながら、WindowsにVMでUbuntu入れてはぁはぁしてるなうううう\,Macは標準で、コンソール（ターミナル）あるからいろいろできるんだよーねーw\
+\
+\
+これであーしてこーして、あんなことしちゃったりなんかしてぐふ、ぐふふふー♪\
+\
+ぅぉ、おおお、落ち着け私｡ﾟヽ(*´Д｀)ﾉﾟ｡ \
+\
+(￣△￣）y─┛~~~~~\
+\
+書籍も買ったし、飲み会で今週は１万以上飛んでるし、、お金使いすぎ、、かも。。。\
+\
+\
+あ、来週も忘年会あるじゃんうう\
+\
+この年末年始あたりは、クリスマスやら忘年会やら新年会やらのイベントごとですごいことになるわさわさー。\
+\
+ボーナスもどうやら２０％カットらしーしーーー！！！！！！\
+\
+なんやねんぼけが！！どーなってんねんな！！！！ふざけんなやる気あんのかごらああああああ！！\
+\
+前より高いやんかなんでやねんん！！！\
+\
+ヾ(＠⌒▽⌒＠)ﾉﾜｰｲ! \
+\
+これはこれでヾ(＠⌒▽⌒＠)ﾉﾜｰｲ! \
+\
+\
+明日のお休みはー♪\
+\
+まいまっくと過ごすわん♪♪\
+\
+\
+・・・やばいなそろそろ、あぶない領域に足が入りかけてるわね。私・・・。\
+\
+うん、まだ入ってないヨ！\
+\
+\
+そんなわけで、いろいろやることあるんで！！(/・・)ｽﾁｬｯ\
+,0,\N,2011-12-10 14:12:36,2012-04-08 12:00:49
+980190968,Mac AirのRails開発環境構築,\N,Mac購入後、コンソールの設定やらなんやら何もできてないし、ツールも入ってないので環境を整えます。\
+\
+ちなみに、Rails3.1が動くまでの環境構築でーすよ～。\
+,まぁ、何をいれたってかまわないんですが\
+私が買ってまずしたことをかきまーす！＾＾*\
+\
+\
+◆まず必要と考えられるのは、FixreFox！ですねー。Safariだとちょっと・・・きついので＞＜\
+これはダウンロードしてインストールして終わり。\
+\
+\
+\
+◆それから、ターミナルでの見た目をかえます。\
+\
+ターミナルのlsの結果などに色をつけたかったので、以下のURLを参考に色をつけました。\
+http://d.hatena.ne.jp/yamazaru_rengou/20090119/1232373540\
+\
+$ vim ~/.profile\
+\
+以下を追加\
+\
+#export LSCOLORS=exfxcxdxbxegedabagacad\
+export LSCOLORS=gxfxcxdxbxegedabagacad\
+alias ls='ls -G'\
+\
+後、vimにも色がつけたかったので\
+\
+$ vim ~/.vimrc\
+\
+:syntax on\
+\
+行番号もデフォルトで表示させたかったので\
+\
+:set number\
+\
+も追記しました。\
+\
+行番号が表示されてて、デフォルトで表示させたくない場合は上記部分を削除またはコメントするとよいよー。\
+\
+その場だけ表示させないようにするなら、\
+vim上で\
+\
+:set nonumber\
+とか入れれば行番号が非表示になるでよ。\
+\
+\
+\
+◆そして下記にあるとおり、Mac Book AirにMacPortsのインストールをしてみました。\
+\
+あ、その前にXCodeをインストールしたんだった！\
+http://d.hatena.ne.jp/solitary_shell/20080727/1217131535\
+さて、tar.gz形式のファイルをダウンロードして解凍し、インストールを試みました。が、あやしい・・・。\
+\
+なので、大人しくdmg形式のファイルをダウンロードしてGUIで展開。\
+しようと思ったのに、なかなかバージョンがあわずに苦戦〜〜；；なんでぇぇ\
+\
+って、ファイル名に思いっきり対応Macのバージョン書いてるやんけΣ\
+\
+ファイル名にMacPortsのバージョンの後ろにある数値がMacの対応バージョンなので、そこを確認してダウンロードするようにしてください。。\
+\
+\
+MacPortがダウンロードできるサイト\
+http://distfiles.macports.org/MacPorts/\
+\
+Mac OS Xが10.7.2にぴったりのMacPortsのバージョンMacPorts-1.7.0-10.7-Leopard.dmgがありました。よかった〜＞＜\
+\
+\
+\
+◆インストール完了もつかの間、portコマンドのパスを通す前に/opt/local/bin/portのバージョン確認を行ったところ以下のようなエラーが発生していまいました。\
+\
+dlopen(/opt/local/share/macports/Tcl/macports1.0/MacPorts.dylib\\\, 10): no suitable image found.  Did find:\
+\
+/opt/local/share/macports/Tcl/macports1.0/MacPorts.dylib: no matching architecture in universal wrapper\
+while executing\
+"load /opt/local/share/macports/Tcl/macports1.0/MacPorts.dylib"\
+("package ifneeded macports 1.0" script)\
+invoked from within\
+"package require macports"\
+(file "/opt/local/bin/port" line 38)\
+\
+なんなんだこのエラーは、、\
+けど、Lionの方を試してみたらちゃんと実行できまーしたー！\
+MacPorts-2.0.3-10.7-Lion.dmg\
+\
+$ port version\
+Version: 2.0.3\
+\
+おけおけ！！\
+これでRVMのインストールができるね☆\
+\
+\
+\
+◆下記URLを参考に引き続き構築しますよー。\
+\
+http://d.hatena.ne.jp/takuya_v_v/20110215/1297789021\
+$ sudo port selfupdate\
+$ sudo port install readline\
+$ sudo port install git-core\
+$ sudo port install curl\
+\
+そして一発でRVMの最新版をインストール！\
+$ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )\
+$ source ~/.rvm/scripts/rvm\
+$ rvm -v\
+rvm 1.10.0 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]\
+\
+最後にRVMコマンドのパスを通す。\
+~/.profileに以下を追加。\
+\
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then\
+  source $HOME/.rvm/scripts/rvm;\
+fi\
+\
+RVMインストール完了。\
+\
+\
+\
+◆RVMが入ったところで、Rubyのインストールをします。\
+\
+RVMの使い方については特に詳しく説明しないので、もし詳細を知りたければ、検索するあるヨ♪\
+\
+$ rvm list known\
+上記コマンドで、インストールできるrubyを確認。\
+\
+うおおぉ！？！？\
+Ruby 1.9.3が出たのは知ってたけど、一覧にあるじゃないかあああ！！\
+先週？くらいまで候補に現れてなかったのに！\
+\
+さっそくインストールじゃー！！\
+・・・って思ったけどエラーで進まないからとりあえず今は1.9.2で・・・orz\
+\
+\
+$ rvm install 1.9.2\
+$ rvm use 1.9.2\
+rails3.1というgemsetを作成\
+\
+$ rvm gemset create rails3.1\
+このgemsetをdefaultに設定\
+\
+$ rvm use 1.9.2@rails3.1 --default\
+\
+\
+\
+◆そしてついにrails3.1のインストール！\
+\
+$ rvm list\
+$ rvm gemset list\
+\
+gemsetがrails3.1であることを確認し、gemでrailsをインストールします！\
+$ gem install rails -v 3.1\
+\
+おおーっと！MySQLを忘れてた・・・。\
+http://mac-homepage.livedoor.biz/archives/604965.html\
+\
+こちらのURLを参考に、dmg形式でMySQLの最新版を入手します。\
+http://dev.mysql.com/downloads/mysql/5.1.html#macosx-dmg\
+\
+\
+最後にmysqlコマンドのパス/usr/local/mysql/bin/を通してつながることを確認しておわり。\
+\
+\
+さて、railsのプロジェクトをつくりまーす；；\
+やっと・・・orz\
+\
+$ rvmsudo rails new [プロジェクト名] -d mysql\
+\
+よしよし！よし！！\
+うまくいった！m9\
+\
+$ rvmsudo rails server -p [ポート番号] -e [環境モード]\
+\
+デフォルトでポートは3000、環境はdevelopmentモードが動作します。\
+\
+ブラウザを開いて以下URLを開いてみましょ。\
+http://localhost:3000/\
+ちゃんと表示されたぞ！！\
+\
+終わった！！！！！！やったー！；；\
+\
+\
+以上。\
+\
+\
+おつかれさまー；；私ー；▽；\
+,0,\N,2011-12-11 09:42:32,2012-04-08 12:01:54
+980190969,Androidアプリ開発。その２,\N,この前から随分とたってしまったけど、続きをしていこうと思います☆\
+\
+「Androidアプリ開発。その１」,まだ・・・インストール途中なんだっけ。。うう；；\,～ダウンロード＆インストール編（途中から開始）～\
+\
+まず開発するために用意しなければいけないツールとか関連ツールが以下７点。\
+◆+Lhaca(zip解凍ソフト、早ければなんでも)\
+◆TeraPad(テキストエディタ、メモ帳以外なんでも)\
+◆Java SE Development Kit(JDK)\
+◆Eclipse\
+◆Pleiades\
+◆Android SDK\
+◆Android Development Tools(ADT) Plugin for Eclipse\
+\
+っとのことでしたが、上三つが前回完了してます。\
+\
+\
+\
+◆なので、今回はEclipseから！\
+\
+Eclipseは、↓のサイトから入手可能です。\
+http://www.eclipse.org/downloads/\
+\
+ここでOlder Versionsを選択。\
+・・・さて、どのバージョンを入れるべきか。。\
+\
+あんまり新しいと私わからんねんけどな＞＜；\
+まぁいいや、とりあえず今の最新を入れてみまーす！ｗ\
+\
+Eclipse Indigo Packages (2011 - v 3.7) \
+を選択。\
+\
+Eclipse IDE for Java EE Developers\
+を選択。\
+\
+私の開発環境は、Windows 32bitなので右側にあるWindows 32bitを選択。\
+\
+こんなマーク、クリックしてダウンロード！！！\
+<img src="/images/blog_images/20111215_1.png">\
+Eclipseのインストールと設定は後で説明しますので、\
+\
+\
+\
+◆まずはPleiadesをダウンロードです。\
+↓のサイトから、Pleaiadesをダウンロードです。\
+http://mergedoc.sourceforge.jp/\
+\
+\
+そうすると最新版と安定版があります。\
+\
+うーむ・・・。安定版・・・いれてみましょう。\
+今の安定版は、1.3.3でした。\
+\
+\
+\
+◆さて、EclipseとPleiadesのインストールを行います。\
+\
+解凍したEclipseの「eclipse」フォルダを私はD直下に置きました。私の環境では、DはCの代わりなんですよ～。\
+\
+そのDにコピーした「eclipse」フォルダの配下に解凍した「pleiades」フォルダ配下のファイルたちを入れます。\
+\
+おそらく↓のようなファイル軍です。\
+・「features」フォルダ\
+・「plugins」フォルダ\
+・「readme」フォルダ\
+・eclipse.exe -clean.cmd\
+・eclipse.exe startup.cmd\
+\
+そうすると、上書きしますか？といったポップアップが表示されるかと思います。\
+すべて上書きです！！！m9\
+\
+私のトコでは、こんな画面になりました＾＾\
+あってるかわかんね＾＾；\
+<img src="/images/blog_images/20111215_2.png">\
+\
+\
+\
+◆そして、次にeclipse.iniを開きますねー。\
+\
+\
+絶対注意しないといけないこと。\
+メモ帳とかで開いてしまわないこと！\
+前回インストールした、Terapadを利用してください。\
+\
+そうすると↓な感じに開くと思います。\
+最後の行に、↓文字列を追加してください。\
+\\\
+<img src="/images/blog_images/20111215_3.png">\
+-javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar\
+さて！！\
+eclipseを起動してみます。ﾄﾞｷﾄﾞｷ＞＜；\
+\
+「eclipse.exe startup.cmd」をﾀﾞﾌﾞﾙｸﾘｯｸして起動してみてください！\
+\
+あ、あれ・・・startupが起動しねー。\
+\
+・・・まぁいいや、eclipse.exe実行！！！！（\
+\
+\
+\
+◆起動したところで、ワークスペース・ランチャーが開きます。\
+\
+<img src="/images/blog_images/20111215_4.png">\
+\
+ワークスペースを選択して、「OK」です。\
+\
+うっほｗｗｗ起動したーーｗ（あたりまえだけど。\
+\
+<img src="/images/blog_images/20111215_5.png">\
+\
+\
+\
+◆さって、ついにSDKっすよーーｗ\
+\
+↓のサイトでAndroid SDKを入手して下さい。\
+http://developer.android.com/sdk/index.html\
+\
+この中から、環境に合わせてダウンロードです。\
+\
+<img src="/images/blog_images/20111215_6.png">\
+\
+さて、私の環境は先ほどから申し上げてるとおり、Windows・・・。\
+android-sdk_r16-windows.zip\
+をダウンロードしました。\
+\
+解凍したデータ「android-sdk-windos」をD直下に格納。\
+\
+そして、「android-sdk-windows」フォルダ配下の「SDK Manager.exe」を起動します。\
+\
+うむ・・・。どれをインストールするかを聞いてきてる？のかな？\
+\
+<img src="/images/blog_images/20111215_7.png">\
+\
+\
+・・・。\
+\
+\
+・・・。\
+\
+\
+・・・。\
+\
+\
+と、とにかくAndroid3.0以降のものと・・・、Android SDK platform-toolsと・・・？\
+\
+とりあえずこのくらい・・・？？\
+\
+ま、足りなかったら、また後で入れればいっかーｗｗ\
+\
+「Accept All」にチェックを入れて、インストール開始♪\
+<img src="/images/blog_images/20111215_8.png">\
+\
+\
+なげぇ・・・・・。\
+<img src="/images/blog_images/20111215_9.png">\
+,1,\N,2011-12-15 13:04:03,2012-04-08 12:06:29
