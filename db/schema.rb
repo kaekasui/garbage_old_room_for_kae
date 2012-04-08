@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120408025801) do
 
   create_table "access_counts", :force => true do |t|
-    t.string   "name"
+    t.integer  "menu_id"
     t.date     "access_at"
     t.integer  "cnt"
     t.datetime "created_at", :null => false

@@ -11,7 +11,7 @@ Room::Application.routes.draw do
   namespace :admin do resources :admin_menus end
 
   namespace :admin do
-    resources :access_counts
+    resources :access_counts, only:[:index]
     resources :blogs
     #resources :updated_informations
     #resources :side_menus

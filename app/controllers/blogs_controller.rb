@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
   before_filter :title_blog
   before_filter :new_blogs
   before_filter :blog_links
+  before_filter :access
 
   # GET /blogs
   # GET /blogs.json
@@ -52,5 +53,9 @@ class BlogsController < ApplicationController
 
   def blog_links
     @blog_links = BlogLink.no_draft
+  end
+
+  def access
+    Admin::AccessCount.set_access_counts(2)
   end
 end
