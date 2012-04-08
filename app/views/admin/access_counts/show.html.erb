@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_access_count.name %>
+</p>
+
+<p>
+  <b>Access at:</b>
+  <%= @admin_access_count.access_at %>
+</p>
+
+<p>
+  <b>Cnt:</b>
+  <%= @admin_access_count.cnt %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_access_count_path(@admin_access_count) %> |
+<%= link_to 'Back', admin_access_counts_path %>

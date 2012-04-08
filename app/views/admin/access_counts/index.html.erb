@@ -1,0 +1,27 @@
+<h1>Listing admin_access_counts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Access at</th>
+    <th>Cnt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_access_counts.each do |admin_access_count| %>
+  <tr>
+    <td><%= admin_access_count.name %></td>
+    <td><%= admin_access_count.access_at %></td>
+    <td><%= admin_access_count.cnt %></td>
+    <td><%= link_to 'Show', admin_access_count %></td>
+    <td><%= link_to 'Edit', edit_admin_access_count_path(admin_access_count) %></td>
+    <td><%= link_to 'Destroy', admin_access_count, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Access count', new_admin_access_count_path %>

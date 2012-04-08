@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  access_at: 2012-04-08
+  cnt: 1
+
+two:
+  name: MyString
+  access_at: 2012-04-08
+  cnt: 1
