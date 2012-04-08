@@ -1,0 +1,16 @@
+<%= render :partial => "shared/menu/menu_title", :locals => {:menu_title => t("side_menu.blog_access_counter.title")} %>
+
+<ul>
+  <li>
+    <%= t("side_menu.blog_access_counter.all") %>
+    <%= AccessCount.blog_all_counter %>
+  </li>
+  <li>
+    <%= t("side_menu.blog_access_counter.yesterday") %>
+    <%= AccessCount.blog_yesterday_counter %>
+  </li>
+  <li>
+    <%= t("side_menu.blog_access_counter.today") %>
+    <%= AccessCount.blog_today_counter %>
+  </li>
+</ul>

@@ -33,6 +33,11 @@ ja:
       title: "メニュー"
     recent_blogs:
       title: "最近の記事"
+    blog_access_counter:
+      title: "アクセスカウンタ"
+      all: "全体:"
+      yesterday: "昨日:"
+      today: "今日:"
     blog_links:
       title: "リンク"
   ##########
