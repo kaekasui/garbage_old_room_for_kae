@@ -1,2 +1,3 @@
-class MailForm < ActiveRecord::Base
+class MailForm < Admin::MailForm
+
 end

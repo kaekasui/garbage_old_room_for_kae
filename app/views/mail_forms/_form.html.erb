@@ -1,7 +1,7 @@
 <a name="mail_form"></a>
 <p id="notice"><%= notice %></p>
 
-<%= form_for :mail_forms, html: {class: "form-vertical"}, url: {action: "create", controller:"mail_forms"} do |f| %>
+<%= form_for :mail_form, html: {class: "form-vertical"}, url: mail_forms_path do |f| %>
 
   <div class="control-group">
   <%= f.label :name, class: "control-label" %>

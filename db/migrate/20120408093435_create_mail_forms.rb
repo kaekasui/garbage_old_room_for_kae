@@ -4,6 +4,9 @@ class CreateMailForms < ActiveRecord::Migration
       t.string :name
       t.string :mail
       t.text :content
+      t.string :ip
+      t.string :host
+      t.boolean :check
 
       t.timestamps
     end

@@ -21,17 +21,6 @@ ActiveRecord::Schema.define(:version => 20120408093435) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "admin_mail_forms", :force => true do |t|
-    t.string   "name"
-    t.string   "mail"
-    t.text     "content"
-    t.string   "ip"
-    t.string   "host"
-    t.boolean  "check"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "admin_menus", :force => true do |t|
     t.integer  "admin_menu_id"
     t.string   "title"
@@ -98,6 +87,9 @@ ActiveRecord::Schema.define(:version => 20120408093435) do
     t.string   "name"
     t.string   "mail"
     t.text     "content"
+    t.string   "ip"
+    t.string   "host"
+    t.boolean  "check"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

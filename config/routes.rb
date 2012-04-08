@@ -1,7 +1,5 @@
 Room::Application.routes.draw do
 
-  namespace :admin do resources :mail_forms end
-
 
   namespace :admin do resources :admin_users end
 
@@ -16,6 +14,7 @@ Room::Application.routes.draw do
   namespace :admin do
     resources :access_counts, only:[:index]
     resources :blogs
+    resources :mail_forms, except: [:new, :create]
     #resources :updated_informations
     #resources :side_menus
     #resources :menus

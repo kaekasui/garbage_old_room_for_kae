@@ -1,17 +1,4 @@
-<h1>Listing admin_mail_forms</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Mail</th>
-    <th>Content</th>
-    <th>Ip</th>
-    <th>Host</th>
-    <th>Check</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table">
 
 <% @admin_mail_forms.each do |admin_mail_form| %>
   <tr>
@@ -22,12 +9,8 @@
     <td><%= admin_mail_form.host %></td>
     <td><%= admin_mail_form.check %></td>
     <td><%= link_to 'Show', admin_mail_form %></td>
-    <td><%= link_to 'Edit', edit_admin_mail_form_path(admin_mail_form) %></td>
     <td><%= link_to 'Destroy', admin_mail_form, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Mail form', new_admin_mail_form_path %>
