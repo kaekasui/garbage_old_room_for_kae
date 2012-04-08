@@ -1,5 +1,7 @@
 Room::Application.routes.draw do
 
+  namespace :admin do resources :mail_forms end
+
   resources :mail_forms
 
   namespace :admin do resources :admin_users end
