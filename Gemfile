@@ -44,6 +44,8 @@ end
 
 # OmniAuth
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 gem 'kaminari'
 
 

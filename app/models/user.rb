@@ -17,8 +17,11 @@ class User < ActiveRecord::Base
     user[:uid] = auth["uid"]
     
     unless auth["info"].blank?
-      user[:name] = auth["info"]["name"]
-      user[:screen_name] = auth["info"]["nickname"]
+      if user[:provider] == "facebook"
+        user[:name] = auth["info"]["name"]
+      else
+        user[:screen_name] = auth["info"]["nickname"]
+      end
       user[:image] = auth["info"]["image"]
     end
     
