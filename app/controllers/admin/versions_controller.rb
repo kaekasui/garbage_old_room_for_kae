@@ -75,11 +75,16 @@ class Admin::VersionsController < ApplicationController
   # DELETE /admin/versions/1.json
   def destroy
     @admin_version = Admin::Version.find(params[:id])
-    @admin_version.destroy
+    #@admin_version.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_versions_url }
-      format.json { head :ok }
+      if @admin_version.update_attributes(deleted_at: Time.now)
+        format.html { redirect_to admin_versions_url, notice: 'Version was successfully deleted.' }
+        format.json { head :ok }
+      else
+        format.html { render action: "delete" }
+        format.json { render json: @admin_version.errors, status: :unprocessable_entity }
+      end
     end
   end
 
