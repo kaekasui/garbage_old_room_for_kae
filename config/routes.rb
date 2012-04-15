@@ -18,7 +18,7 @@ Room::Application.routes.draw do
     #resources :updated_informations
     #resources :side_menus
     #resources :menus
-    #resources :versions
+    resources :versions
   end
 
   resources :blogs, only: [:index, :show] do

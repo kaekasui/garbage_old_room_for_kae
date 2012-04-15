@@ -1,4 +1,6 @@
 class Admin::VersionsController < ApplicationController
+  before_filter :admin_menu_name
+
   # GET /admin/versions
   # GET /admin/versions.json
   def index
@@ -79,5 +81,12 @@ class Admin::VersionsController < ApplicationController
       format.html { redirect_to admin_versions_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def admin_menu_name
+    @admin_menu_name = AdminMenu.find(10).title
+    @admin_tab_menus = AdminMenu.find_all_by_admin_menu_id(9)
   end
 end
