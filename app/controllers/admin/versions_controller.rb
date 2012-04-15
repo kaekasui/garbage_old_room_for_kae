@@ -12,17 +12,6 @@ class Admin::VersionsController < ApplicationController
     end
   end
 
-  # GET /admin/versions/1
-  # GET /admin/versions/1.json
-  def show
-    @admin_version = Admin::Version.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @admin_version }
-    end
-  end
-
   # GET /admin/versions/new
   # GET /admin/versions/new.json
   def new
